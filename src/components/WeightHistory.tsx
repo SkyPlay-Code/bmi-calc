@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import React, { useState } from 'react';
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts';
 
 interface WeightEntry {
@@ -7,8 +7,8 @@ interface WeightEntry {
   bmi: number;
 }
 
-export default function WeightHistory() {
-  const [weightHistory, setWeightHistory] = useState<WeightEntry[]>([
+const WeightHistory: React.FC = () => {
+  const [weightHistory] = useState<WeightEntry[]>([
     { date: '2024-01-01', weight: 70, bmi: 22.5 },
     { date: '2024-02-01', weight: 69, bmi: 22.2 },
     { date: '2024-03-01', weight: 68, bmi: 21.9 },
@@ -102,4 +102,6 @@ export default function WeightHistory() {
       </div>
     </div>
   );
-} 
+};
+
+export default WeightHistory; 
